@@ -1,7 +1,4 @@
-
-// Let's start with importing `NlpManager` from `node-nlp`. This will be responsible for training, saving, loading and processing.
 const { NlpManager } = require("node-nlp");
-// Creating new Instance of NlpManager class.
 const manager = new NlpManager({ languages: ["es"] });
 const fs = require("fs");
 const files = fs.readdirSync("./intents");
