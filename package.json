@@ -1,0 +1,18 @@
+{
+  "name": "tensor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "train": "node train.js",
+    "start": "node main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "buddhi-nlp": "^0.1.3",
+    "fs": "^0.0.1-security",
+    "node-nlp": "^4.23.4"
+  }
+}
