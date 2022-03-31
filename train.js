@@ -6,7 +6,6 @@ const manager = new NlpManager({ languages: ["es"] });
 const fs = require("fs");
 // Let's read all our intents files in the folder intents
 const files = fs.readdirSync("./intents");
-// Looping through the files and Parsing the string to object and passing it to manager instance to train and process it.
 var textfile = 'questions.txt';
 var text = fs.readFileSync(textfile).toString();
 fs.writeFileSync("./questions.txt", '', 'utf8');
