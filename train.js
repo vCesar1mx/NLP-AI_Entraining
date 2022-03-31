@@ -10,31 +10,18 @@ const files = fs.readdirSync("./intents");
 // Looping through the files and Parsing the string to object and passing it to manager instance to train and process it.
 var textfile = 'questions.txt';
 var text = fs.readFileSync(textfile).toString();
-
+fs.writeFileSync("./questions.txt", '', 'utf8');
 for (const file of files) {
     let data = fs.readFileSync(`./intents/${file}`);
     data = JSON.parse(data);
     const intent = file.replace(".json", "");
+    fs.appendFileSync('questions.txt', data.questions.toString())
     for (const question of data.questions) {
-        fs.writeFileSync('questions.txt', data.questions.toString())
         manager.addDocument("es", question, intent);
-        function checkifexistwordintextfile(word) {
-
-            if (text.indexOf(word) === -1) {
-                //console.log("element doesn't exist");
-                //console.log(word)
-            }
-            else {
-                fs.appendFileSync('questionsDuplicated.txt',word.toString()+'\n')
-                console.log("Question duplicated in: " + word.toString());
-            }
-        }
-        
     }
     for (const answer of data.answers) {
         manager.addAnswer("es", intent, answer);
     }
-    checkifexistwordintextfile(data.questions.toString())
 }
 
 async function train_save() {
