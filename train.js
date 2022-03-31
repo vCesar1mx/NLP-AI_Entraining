@@ -36,11 +36,11 @@ for (const file of files) {
     }
     checkifexistwordintextfile(data.questions.toString())
 }
-// let's create a function that will be responsible for Training and saving the manager instance.
+
 async function train_save() {
     await manager.train();
     manager.save();
 }
-// Calling the above function
+
 train_save();
 
