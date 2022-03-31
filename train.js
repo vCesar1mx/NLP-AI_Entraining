@@ -3,7 +3,6 @@
 const { NlpManager } = require("node-nlp");
 // Creating new Instance of NlpManager class.
 const manager = new NlpManager({ languages: ["es"] });
-// Let's import fs module to read our json files.
 const fs = require("fs");
 // Let's read all our intents files in the folder intents
 const files = fs.readdirSync("./intents");
