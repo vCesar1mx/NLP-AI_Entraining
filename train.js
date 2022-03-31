@@ -4,7 +4,6 @@ const { NlpManager } = require("node-nlp");
 // Creating new Instance of NlpManager class.
 const manager = new NlpManager({ languages: ["es"] });
 const fs = require("fs");
-// Let's read all our intents files in the folder intents
 const files = fs.readdirSync("./intents");
 var textfile = 'questions.txt';
 var text = fs.readFileSync(textfile).toString();
