@@ -1,0 +1,364 @@
+{
+  "settings": {
+    "languages": [
+      "es"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "es"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "es": {
+        "settings": {
+          "locale": "es",
+          "trainByDomain": false,
+          "tag": "domain-manager-es",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "adi": {
+            "intent": "greetings.adios",
+            "domain": "default"
+          },
+          "bye": {
+            "intent": "greetings.adios",
+            "domain": "default"
+          },
+          "hast,lueg": {
+            "intent": "greetings.adios",
+            "domain": "default"
+          },
+          "nos,ver": {
+            "intent": "greetings.adios",
+            "domain": "default"
+          },
+          "ir,me,que,ten": {
+            "intent": "greetings.adios",
+            "domain": "default"
+          },
+          "hol": {
+            "intent": "greetings.hola",
+            "domain": "default"
+          },
+          "ola": {
+            "intent": "greetings.hola",
+            "domain": "default"
+          },
+          "buen,dia": {
+            "intent": "greetings.hola",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings.adios": "default",
+          "greetings.hola": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "adios",
+            "intent": "greetings.adios"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye",
+            "intent": "greetings.adios"
+          },
+          {
+            "domain": "default",
+            "utterance": "hasta luego",
+            "intent": "greetings.adios"
+          },
+          {
+            "domain": "default",
+            "utterance": "Nos vemos",
+            "intent": "greetings.adios"
+          },
+          {
+            "domain": "default",
+            "utterance": "Me tengo que ir",
+            "intent": "greetings.adios"
+          },
+          {
+            "domain": "default",
+            "utterance": "hola",
+            "intent": "greetings.hola"
+          },
+          {
+            "domain": "default",
+            "utterance": "ola",
+            "intent": "greetings.hola"
+          },
+          {
+            "domain": "default",
+            "utterance": "buenos dias",
+            "intent": "greetings.hola"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "es",
+              "tag": "nlu-es",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "adi": 1,
+              "bye": 1,
+              "hast": 1,
+              "lueg": 1,
+              "nos": 1,
+              "ver": 1,
+              "me": 1,
+              "ten": 1,
+              "que": 1,
+              "ir": 1,
+              "hol": 1,
+              "ola": 1,
+              "buen": 1,
+              "dia": 1
+            },
+            "intents": {
+              "greetings.adios": 1,
+              "greetings.hola": 1
+            },
+            "intentFeatures": {
+              "greetings.adios": {
+                "adi": 1,
+                "bye": 1,
+                "hast": 1,
+                "lueg": 1,
+                "nos": 1,
+                "ver": 1,
+                "me": 1,
+                "ten": 1,
+                "que": 1,
+                "ir": 1
+              },
+              "greetings.hola": {
+                "hol": 1,
+                "ola": 1,
+                "buen": 1,
+                "dia": 1
+              }
+            },
+            "featuresToIntent": {
+              "adi": [
+                "greetings.adios"
+              ],
+              "bye": [
+                "greetings.adios"
+              ],
+              "hast": [
+                "greetings.adios"
+              ],
+              "lueg": [
+                "greetings.adios"
+              ],
+              "nos": [
+                "greetings.adios"
+              ],
+              "ver": [
+                "greetings.adios"
+              ],
+              "me": [
+                "greetings.adios"
+              ],
+              "ten": [
+                "greetings.adios"
+              ],
+              "que": [
+                "greetings.adios"
+              ],
+              "ir": [
+                "greetings.adios"
+              ],
+              "hol": [
+                "greetings.hola"
+              ],
+              "ola": [
+                "greetings.hola"
+              ],
+              "buen": [
+                "greetings.hola"
+              ],
+              "dia": [
+                "greetings.hola"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "es",
+                "tag": "nlu-es",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "adi",
+                "bye",
+                "hast",
+                "lueg",
+                "nos",
+                "ver",
+                "me",
+                "ten",
+                "que",
+                "ir",
+                "hol",
+                "ola",
+                "buen",
+                "dia"
+              ],
+              "intents": [
+                "greetings.adios",
+                "greetings.hola"
+              ],
+              "perceptrons": [
+                [
+                  8.177351951599121,
+                  8.174816131591797,
+                  4.143216609954834,
+                  4.143216609954834,
+                  4.143030166625977,
+                  4.143030166625977,
+                  2.0721874237060547,
+                  2.0721874237060547,
+                  2.0721874237060547,
+                  2.0721874237060547,
+                  -5.886852741241455,
+                  -5.864293575286865,
+                  -2.990248680114746,
+                  -2.990248680114746,
+                  5.9852561944163885
+                ],
+                [
+                  -4.496938705444336,
+                  -4.476167678833008,
+                  -2.297163963317871,
+                  -2.297163963317871,
+                  -2.296685218811035,
+                  -2.296685218811035,
+                  -1.1497960090637207,
+                  -1.1497960090637207,
+                  -1.1497960090637207,
+                  -1.1497960090637207,
+                  9.55623722076416,
+                  9.55019760131836,
+                  4.835781574249268,
+                  4.835781574249268,
+                  4.612379885549443
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "es",
+        "adios"
+      ],
+      [
+        "es",
+        "bye"
+      ],
+      [
+        "es",
+        "hasta luego"
+      ],
+      [
+        "es",
+        "Nos vemos"
+      ],
+      [
+        "es",
+        "Me tengo que ir"
+      ],
+      [
+        "es",
+        "hola"
+      ],
+      [
+        "es",
+        "ola"
+      ],
+      [
+        "es",
+        "buenos dias"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "es": {
+        "greetings.adios": [
+          {
+            "answer": "Nos vemos!"
+          },
+          {
+            "answer": "Adios"
+          },
+          {
+            "answer": "Que le vaya bien"
+          }
+        ],
+        "greetings.hola": [
+          {
+            "answer": "Hola!"
+          },
+          {
+            "answer": "Buenos dias"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
